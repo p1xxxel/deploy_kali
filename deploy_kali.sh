@@ -19,13 +19,16 @@ mkdir ~/.slstatus && git clone https://github.com/p1xxxel/slstatus ~/.slstatus/s
 git clone https://github.com/p1xxxel/dotfiles ~/Downloads/dotfiles && cd ~
 mv ~/Downloads/dotfiles/.xinitrc ~/
 mkdir -p .config/alacritty
-mv ~/Downloads/dotfiles/.alacritty.yml ~/.config/alacritty/
-echo "\n#vi mode\nset -o vi" >> ~/.bashrc
-echo "\n#vi mode\nset -o vi" >> ~/.zshrc
+mv ~/Downloads/dotfiles/alacritty.yml ~/.config/alacritty/
+echo "#vi mode" >> ~/.bashrc
+echo "set -o vi" >> ~/.bashrc
+echo "#vi mode" >> ~/.zshrc
+echo "set -o vi" >> ~/.zshrc
 sudo mv ~/Downloads/dotfiles/profile /etc/profile
+mv ~/Downloads/dotfiles/.fehbg ~/
 
 # Downloading and installing font
-cd ~ && wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip && unzip ~/Hack.zip && mv ~/*ttf /usr/share/fonts/ && cd ~ && fc-cache
+cd ~ && wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip && unzip ~/Hack.zip && sudo mv ~/*ttf /usr/share/fonts/ && cd ~ && fc-cache
 # Downloading and installing alacritty
 cd ~/Downloads && wget https://github.com/alacritty/alacritty/releases/download/v0.4.2/Alacritty-v0.4.2-ubuntu_18_04_amd64.deb && sudo dpkg -i ~/Downloads/Alacritty* && sudo apt-get install -f && cd ~
 
@@ -33,7 +36,7 @@ cd ~/Downloads && wget https://github.com/alacritty/alacritty/releases/download/
 # cd ~/Downloads && wget https://dl.discordapp.net/apps/linux/0.0.14/discord-0.0.14.deb && cd ~
 
 # Downloading and installing ungoogled-chromium
-cd ~/Downloads && wget https://github.com/LordTwix/ungoogled-chromium-binaries/releases/download/87.0.4280.141-1.1/ungoogled-chromium_87.0.4280.141-1.1_linux.AppImage && mv ungoogled* /usr/bin/ungoogled-chromium && cd ~
+cd ~/Downloads && wget https://github.com/LordTwix/ungoogled-chromium-binaries/releases/download/87.0.4280.141-1.1/ungoogled-chromium_87.0.4280.141-1.1_linux.AppImage && chmod +x ungoogled* && sudo mv ungoogled* /usr/bin/ungoogled-chromium && cd ~
 
 # Installing python2 pip
 curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
@@ -41,9 +44,10 @@ sudo python2 get-pip.py
 rm get-pip.py
 
 # Installing some python libraries
+sudo apt-get -y install python3-pip
 pip3 install --user pwn
 pip3 install --user gmpy2
 
 # Cleaning up
-sudo rm -rf ~/Downloads/dotfiles ~/Downloads/Hack.zip ~/Downloads/Alacritty*
+sudo rm -rf ~/Downloads/dotfiles ~/Hack.zip ~/Downloads/Alacritty*
 
