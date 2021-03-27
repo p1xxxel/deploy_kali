@@ -4,7 +4,7 @@
 sudo apt-get update -y && sudo apt-get upgrade -y
 
 # Installing some necessary programs
-sudo apt-get -y install neofetch feh gcc g++ htop libxft-dev libx11-dev libxinerama-dev flameshot keepassxc pavucontrol pcmanfm sxiv qbittorrent radare2 redshift unrar vim xserver-xorg xinit x11-utils
+sudo apt-get -y install neofetch feh gcc g++ htop libxft-dev libx11-dev libxinerama-dev flameshot keepassxc pavucontrol pcmanfm sxiv qbittorrent radare2 redshift unrar vim xserver-xorg xinit x11-utils libimage-exiftool-perl ltrace mpv
 
 # Downloading and installing dwm
 mkdir ~/.dwm && git clone https://github.com/p1xxxel/dwm ~/.dwm/dwm && cd ~/.dwm/dwm && sudo make clean install && cd ~
@@ -24,6 +24,7 @@ echo "#vi mode" >> ~/.bashrc
 echo "set -o vi" >> ~/.bashrc
 echo "#vi mode" >> ~/.zshrc
 echo "set -o vi" >> ~/.zshrc
+echo "set nu" >> ~/.vimrc
 sudo mv ~/Downloads/dotfiles/profile /etc/profile
 mv ~/Downloads/dotfiles/.fehbg ~/
 
@@ -33,7 +34,10 @@ cd ~ && wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Ha
 cd ~/Downloads && wget https://github.com/alacritty/alacritty/releases/download/v0.4.2/Alacritty-v0.4.2-ubuntu_18_04_amd64.deb && sudo dpkg -i ~/Downloads/Alacritty* && sudo apt-get install -f && cd ~
 
 # Downloading and installing discord
-# cd ~/Downloads && wget https://dl.discordapp.net/apps/linux/0.0.14/discord-0.0.14.deb && cd ~
+cd ~/Downloads && wget https://debian.pkgs.org/sid/debian-main-amd64/libappindicator1_0.4.92-8_amd64.deb.html && cd ~
+cd ~/Downloads && wget https://debian.pkgs.org/sid/debian-main-amd64/libindicator7_0.5.0-4_amd64.deb.html && cd ~
+cd ~/Downloads && wget https://dl.discordapp.net/apps/linux/0.0.14/discord-0.0.14.deb && cd ~
+sudo dpkg -i ~/Downloads/libindicator7* && sudo apt-get install -f && sudo dpkg -i ~/Downloads/libappindicator* && sudo apt-get install -f && sudo dpkg -i ~/Downloads/discord* && sudo apt-get install -f
 
 # Downloading and installing ungoogled-chromium
 cd ~/Downloads && wget https://github.com/LordTwix/ungoogled-chromium-binaries/releases/download/87.0.4280.141-1.1/ungoogled-chromium_87.0.4280.141-1.1_linux.AppImage && chmod +x ungoogled* && sudo mv ungoogled* /usr/bin/ungoogled-chromium && cd ~
