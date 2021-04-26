@@ -4,7 +4,7 @@
 sudo apt-get update -y && sudo apt-get upgrade -y
 
 # Installing some necessary programs
-sudo apt-get -y install neofetch feh gcc g++ htop libxft-dev libx11-dev libxinerama-dev flameshot keepassxc pavucontrol pcmanfm sxiv qbittorrent radare2 redshift unrar vim xserver-xorg xinit x11-utils libimage-exiftool-perl ltrace mpv
+sudo apt-get -y install neofetch feh gcc g++ htop libxft-dev libx11-dev libxinerama-dev flameshot keepassxc pavucontrol pcmanfm sxiv qbittorrent radare2 redshift unrar vim xserver-xorg xinit x11-utils libimage-exiftool-perl ltrace mpv ffuf zathura pandoc texlive-latex-recommended 
 
 # Downloading and installing dwm
 mkdir ~/.dwm && git clone https://github.com/p1xxxel/dwm ~/.dwm/dwm && cd ~/.dwm/dwm && sudo make clean install && cd ~
