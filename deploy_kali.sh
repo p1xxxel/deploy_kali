@@ -34,8 +34,8 @@ cd ~ && wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Ha
 cd ~/Downloads && wget https://github.com/alacritty/alacritty/releases/download/v0.4.2/Alacritty-v0.4.2-ubuntu_18_04_amd64.deb && sudo dpkg -i ~/Downloads/Alacritty* && sudo apt-get install -f && cd ~
 
 # Downloading and installing discord
-cd ~/Downloads && wget https://debian.pkgs.org/sid/debian-main-amd64/libappindicator1_0.4.92-8_amd64.deb.html && cd ~
-cd ~/Downloads && wget https://debian.pkgs.org/sid/debian-main-amd64/libindicator7_0.5.0-4_amd64.deb.html && cd ~
+cd ~/Downloads && wget http://ftp.br.debian.org/debian/pool/main/liba/libappindicator/libappindicator1_0.4.92-7_amd64.deb && cd ~
+cd ~/Downloads && wget http://ftp.br.debian.org/debian/pool/main/libi/libindicator/libindicator7_0.5.0-4_amd64.deb && cd ~
 cd ~/Downloads && wget https://dl.discordapp.net/apps/linux/0.0.14/discord-0.0.14.deb && cd ~
 sudo dpkg -i ~/Downloads/libindicator7* && sudo apt-get install -f && sudo dpkg -i ~/Downloads/libappindicator* && sudo apt-get install -f && sudo dpkg -i ~/Downloads/discord* && sudo apt-get install -f
 
